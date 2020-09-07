@@ -21,6 +21,8 @@ Route::get('/', function () {
 Route::resource('tipo_documento', 'TipoDocumentoController');
 Route::resource('proveedor', 'ProveedorController');
 
+
+
 // Route::resources([
 //     'tipo_documento', 'TipoDocumentoController',
 //     'proveedor', 'ProveedorController',
