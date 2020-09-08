@@ -28,7 +28,7 @@
           </div>
           <div class="form-group">
             {!! Form::label('razon_social', 'RAZON SOCIAL', ['class' => 'control-label']) !!}
-            {!! Form::text('razon_social', null, ['class' => 'form-control']) !!}
+            {!! Form::text('razon_social', null, ['class' => 'form-control', 'maxlength' => 100]) !!}
           </div>
         
           {!! Form::submit('GUARDAR', ['class' => 'btn btn-primary']) !!}

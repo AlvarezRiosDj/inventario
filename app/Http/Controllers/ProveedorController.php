@@ -6,9 +6,11 @@ use App\Models\Proveedor;
 use App\Models\TipoDocumento;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProveedor;
+use App\Http\Requests\UpdateProveedor;
 
 class ProveedorController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +18,7 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        $proveedores = Proveedor::all();
+        $proveedores = Proveedor::orderBy('updated_at', 'desc')->get();
         return view('proveedores.index',['proveedores' => $proveedores]);
     }
 
@@ -27,7 +29,7 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        $tipo_documentos = TipoDocumento::pluck('nombre', 'id');
+        $tipo_documentos = TipoDocumento::orderBy('nombre')->pluck('nombre', 'id');
         return view('proveedores.crear', ['tipo_documentos' => $tipo_documentos]);
     }
 
@@ -62,7 +64,8 @@ class ProveedorController extends Controller
      */
     public function edit(Proveedor $proveedor)
     {
-        //
+        $tipo_documentos = TipoDocumento::orderBy('nombre')->pluck('nombre', 'id');
+        return view('proveedores.editar', compact('proveedor', 'tipo_documentos'));
     }
 
     /**
@@ -72,9 +75,13 @@ class ProveedorController extends Controller
      * @param  \App\Models\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Proveedor $proveedor)
+    public function update(UpdateProveedor $request, Proveedor $proveedor)
     {
-        //
+           
+      
+        $proveedor->fill($request->all()); 
+        $proveedor->save();
+        return redirect()->route('proveedor.index');
     }
 
     /**

@@ -15,7 +15,7 @@ class TipoDocumentoController extends Controller
      */
     public function index(Request $request)
     {
-        $tipo_documentos = TipoDocumento::all();
+        $tipo_documentos = TipoDocumento::orderBy('updated_at', 'desc')->get();
    
         return view('tipo_documentos.index',['tipo_documentos'=>$tipo_documentos]);
     }
@@ -40,8 +40,7 @@ class TipoDocumentoController extends Controller
     {
             
         $tipo_documento = TipoDocumento::create($request->all());
-        $tipo_documento->save();
-
+       
         return redirect()->route('tipo_documento.index');
     }
 

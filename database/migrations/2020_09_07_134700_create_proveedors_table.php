@@ -15,8 +15,8 @@ class CreateProveedorsTable extends Migration
     {
         Schema::create('proveedors', function (Blueprint $table) {
             $table->string('id', 20);
-            $table->string('razon_social');
-            $table->string('tipo_documento_id');
+            $table->string('razon_social', 100);
+            $table->string('tipo_documento_id', 20);
             $table->timestamps();
             $table->primary('id');
             $table->foreign('tipo_documento_id')->references('id')->on('tipo_documentos');

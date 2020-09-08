@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreProveedor extends FormRequest
+class UpdateProveedor extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class StoreProveedor extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required|unique:proveedors,id',
+            'id' => 'required|max:20',
             'razon_social' => 'required|max:100',
             'tipo_documento_id' => 'required',
         ];

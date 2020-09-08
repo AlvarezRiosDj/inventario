@@ -20,11 +20,11 @@
 
           <div class="form-group">
             {!! Form::label('id', 'ID', ['class' => 'control-label']) !!}
-            {!! Form::text('id', null, ['class' => 'form-control', 'maxlength' => 3]) !!}
+            {!! Form::text('id', null, ['class' => 'form-control', 'maxlength' => 3, 'style' => 'text-transform:uppercase;', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();']) !!}
           </div>
           <div class="form-group">
             {!! Form::label('nombre', 'NOMBRE', ['class' => 'control-label']) !!}
-            {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+            {!! Form::text('nombre', null, ['class' => 'form-control', 'style' => 'text-transform:uppercase;', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();']) !!}
           </div>
         
           {!! Form::submit('GUARDAR', ['class' => 'btn btn-primary']) !!}
