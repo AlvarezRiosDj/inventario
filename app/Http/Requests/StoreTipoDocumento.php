@@ -24,7 +24,7 @@ class StoreTipoDocumento extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required|unique:tipo_documentos,id|max:3',
+            'id' => 'required|unique:tipos_documentos,id|max:3',
             'nombre' => 'required|max:50',
         ];
     }

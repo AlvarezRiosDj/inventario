@@ -23,7 +23,7 @@
           </div>
           <div class="form-group">
             {!! Form::label('nombre', 'NOMBRE', ['class' => 'control-label']) !!}
-            {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+            {!! Form::text('nombre', null, ['class' => 'form-control', 'style' => 'text-transform:uppercase;', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();']) !!}
           </div>
         
 

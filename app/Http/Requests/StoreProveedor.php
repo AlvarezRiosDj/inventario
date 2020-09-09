@@ -24,7 +24,7 @@ class StoreProveedor extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required|unique:proveedors,id',
+            'id' => 'required|unique:proveedores,id',
             'razon_social' => 'required|max:100',
             'tipo_documento_id' => 'required',
         ];

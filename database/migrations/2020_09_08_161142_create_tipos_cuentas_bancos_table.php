@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProveedorsTable extends Migration
+class CreateTiposCuentasBancosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateProveedorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('proveedors', function (Blueprint $table) {
-            $table->string('id', 20);
-            $table->string('razon_social', 100);
-            $table->string('tipo_documento_id', 20);
+        Schema::create('tipos_cuentas_bancos', function (Blueprint $table) {
+            $table->string('id', 3);
+            $table->string('nombre', 60);
             $table->timestamps();
             $table->primary('id');
-            $table->foreign('tipo_documento_id')->references('id')->on('tipo_documentos');
         });
     }
 
@@ -30,6 +28,6 @@ class CreateProveedorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proveedors');
+        Schema::dropIfExists('tipos_cuentas_bancos');
     }
 }
