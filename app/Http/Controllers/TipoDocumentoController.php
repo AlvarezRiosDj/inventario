@@ -41,7 +41,7 @@ class TipoDocumentoController extends Controller
             
         $tipo_documento = TipoDocumento::create($request->all());
        
-        return redirect()->route('tipo_documento.index');
+        return redirect()->route('tipo_documento.index')->with('status', 'El tipo de documento "'. $tipo_documento->id .'" ha sido creado con exito');
     }
 
     /**

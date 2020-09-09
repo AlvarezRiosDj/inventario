@@ -20,6 +20,7 @@
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{ route('banco.index') }}">Bancos</a>
           <a class="dropdown-item" href="{{ route('tipo_documento.index') }}">Tipo de documento</a>
         </div>
       </li>

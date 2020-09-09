@@ -8,7 +8,13 @@
       <a href="{{ route('tipo_documento.create') }}" class="btn btn-primary">NUEVO TIPO DOCUMENTO</a>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-12 mt-3">
+      @if (session('status'))
+          <div class="alert alert-success">
+              {{ session('status') }}
+          </div>
+      @endif
+
       <table class="table table-bordered mt-3">
         <thead>
           <tr>
